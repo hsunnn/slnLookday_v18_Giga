@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7955DDAD-D7EA-4989-85FF-0746BAA841EB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Lookday_Beta_v17</RootNamespace>
+    <AssemblyName>Lookday_Beta_v17</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include=".Cart\Cartbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include=".Cart\Cartbox.designer.cs">
+      <DependentUpon>Cartbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include=".Cart\OrderHisbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include=".Cart\OrderHisbox.designer.cs">
+      <DependentUpon>OrderHisbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include=".Cart\Wishlistbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include=".Cart\Wishlistbox.Designer.cs">
+      <DependentUpon>Wishlistbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include=".Product\CproductDetails.cs" />
+    <Compile Include=".Product\FrmProduct_old.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Product\FrmProduct_old.designer.cs">
+      <DependentUpon>FrmProduct_old.cs</DependentUpon>
+    </Compile>
+    <Compile Include=".Product\LabelBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include=".Product\LabelBox.designer.cs">
+      <DependentUpon>LabelBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include=".Product\ReviewBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include=".Product\ReviewBox.designer.cs">
+      <DependentUpon>ReviewBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionJoint.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActionType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Activities.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActivitiesAlbum.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookingStates.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassJoint.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassName.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCardInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientCart.Designer.cs">
+      <DependentUpon>FrmClientCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientMain.Designer.cs">
+      <DependentUpon>FrmClientMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientOrders.Designer.cs">
+      <DependentUpon>FrmClientOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientProfile.Designer.cs">
+      <DependentUpon>FrmClientProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientReview.Designer.cs">
+      <DependentUpon>FrmClientReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientSettings.Designer.cs">
+      <DependentUpon>FrmClientSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientWishlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient\FrmClientWishlist.Designer.cs">
+      <DependentUpon>FrmClientWishlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient\FrmWritingReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient\FrmWritingReview.designer.cs">
+      <DependentUpon>FrmWritingReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient\OrderReviewBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmClient\OrderReviewBox.designer.cs">
+      <DependentUpon>OrderReviewBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmSearching_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmSearching_v2.Designer.cs">
+      <DependentUpon>FrmSearching_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStaff\FrmCustomerSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStaff\FrmCustomerSystem.Designer.cs">
+      <DependentUpon>FrmCustomerSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmLogIn.Designer.cs">
+      <DependentUpon>FrmLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmOpacity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmOpacity.Designer.cs">
+      <DependentUpon>FrmOpacity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmOpacity_Big.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmOpacity_Big.Designer.cs">
+      <DependentUpon>FrmOpacity_Big.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmProduct.Designer.cs">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmRegister.Designer.cs">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmService.Designer.cs">
+      <DependentUpon>FrmService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLookday\FrmSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLookday\FrmSignUp.Designer.cs">
+      <DependentUpon>FrmSignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStaff\FrmOrdersSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStaff\FrmOrdersSystem.Designer.cs">
+      <DependentUpon>FrmOrdersSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStaff\FrmProductSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStaff\FrmProductSystem.Designer.cs">
+      <DependentUpon>FrmProductSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStaff\FrmStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStaff\FrmStaff.Designer.cs">
+      <DependentUpon>FrmStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hotels.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CAnimation.cs" />
+    <Compile Include="Models\CCheckInfo.cs" />
+    <Compile Include="Models\CCryptography.cs" />
+    <Compile Include="Models\CCurrentUser.cs" />
+    <Compile Include="Models\CManager.cs" />
+    <Compile Include=".Product\RoomBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include=".Product\RoomBox.designer.cs">
+      <DependentUpon>RoomBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reviews.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tags.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include=".Cart\Cartbox.resx">
+      <DependentUpon>Cartbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include=".Cart\OrderHisbox.resx">
+      <DependentUpon>OrderHisbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include=".Cart\Wishlistbox.resx">
+      <DependentUpon>Wishlistbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include=".Product\FrmProduct_old.resx">
+      <DependentUpon>FrmProduct_old.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include=".Product\LabelBox.resx">
+      <DependentUpon>LabelBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include=".Product\ReviewBox.resx">
+      <DependentUpon>ReviewBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient\FrmClientCart.resx">
+      <DependentUpon>FrmClientCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient\FrmClientMain.resx">
+      <DependentUpon>FrmClientMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient\FrmClientOrders.resx">
+      <DependentUpon>FrmClientOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient\FrmClientProfile.resx">
+      <DependentUpon>FrmClientProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient\FrmClientReview.resx">
+      <DependentUpon>FrmClientReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient\FrmClientSettings.resx">
+      <DependentUpon>FrmClientSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient\FrmClientWishlist.resx">
+      <DependentUpon>FrmClientWishlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient\FrmWritingReview.resx">
+      <DependentUpon>FrmWritingReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient\OrderReviewBox.resx">
+      <DependentUpon>OrderReviewBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmSearching_v2.resx">
+      <DependentUpon>FrmSearching_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStaff\FrmCustomerSystem.resx">
+      <DependentUpon>FrmCustomerSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmLogIn.resx">
+      <DependentUpon>FrmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmOpacity.resx">
+      <DependentUpon>FrmOpacity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmOpacity_Big.resx">
+      <DependentUpon>FrmOpacity_Big.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmProduct.resx">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmRegister.resx">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmService.resx">
+      <DependentUpon>FrmService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLookday\FrmSignUp.resx">
+      <DependentUpon>FrmSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStaff\FrmOrdersSystem.resx">
+      <DependentUpon>FrmOrdersSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStaff\FrmProductSystem.resx">
+      <DependentUpon>FrmProductSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStaff\FrmStaff.resx">
+      <DependentUpon>FrmStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include=".Product\RoomBox.resx">
+      <DependentUpon>RoomBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrmHomeBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrmRegisterBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogInBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoFrmMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoRegister.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProductLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignUpBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff_Pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreditMasterCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreditPayPal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreditVisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreditIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreditIcon-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\HeartIcon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
