@@ -190,41 +190,39 @@ namespace Lookday_Beta_v17
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!CheckTextboxValue()) return;
-            string message = "Are you sure want to add new data?";
-            string title = "Data Add";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.No) return;
-            using (dblookdaysEntities db = new dblookdaysEntities())
-            {
-                Activities NewAc = new Activities
+                if (!CheckTextboxValue()) return;
+                string message = "Are you sure want to add new data?";
+                string title = "Data Add";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.No) return;
+                using (dblookdaysEntities db = new dblookdaysEntities())
                 {
-                    Name = txtName.Text,
-                    Description = txtDescription.Text,
-                    Price = price,
-                    Date = dateTimePicker1.Value,
-                    CityID = cityID,
-                    Remaining = remaining,
-                    HotelID = hotelID
-                };
-                db.Activities.Add(NewAc);
-                db.SaveChanges();
+                    Activities NewAc = new Activities
+                    {
+                        Name = txtName.Text,
+                        Description = txtDescription.Text,
+                        Price = price,
+                        Date = dateTimePicker1.Value,
+                        CityID = cityID,
+                        Remaining = remaining,
+                        HotelID = hotelID
+                    };
+                    db.Activities.Add(NewAc);
+                    db.SaveChanges();
 
-                //以下為新增的方法讓圖片存取至 ActivityAlbum中
+                    ActivitiesAlbum album = new ActivitiesAlbum
+                    {
+                        ActivityID = NewAc.ActivityID,
+                        Photo = ConvertImageToByteArray(pictureBox1.Image)
+                    };
 
-                ActivitiesAlbum album = new ActivitiesAlbum
-                {
-                    ActivityID = NewAc.ActivityID,
-                    Photo = ConvertImageToByteArray(pictureBox1.Image)
-                };
-
-                db.ActivitiesAlbum.Add(album);
-                db.SaveChanges();
-            }
-            MessageBox.Show("Save changes");
-            querryall();
-            ClearTextBoxes();
+                    db.ActivitiesAlbum.Add(album);
+                    db.SaveChanges();
+                }
+                MessageBox.Show("Save changes");
+                querryall();
+                ClearTextBoxes();        
         }
 
         private byte[] ConvertImageToByteArray(Image image)
@@ -248,7 +246,7 @@ namespace Lookday_Beta_v17
             Activities Activities = db.Activities.FirstOrDefault(p => p.ActivityID == id);
             if (Activities == null) return;
             activities = Activities;
-        }
+        }s
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
