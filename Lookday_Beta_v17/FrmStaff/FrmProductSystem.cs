@@ -246,7 +246,7 @@ namespace Lookday_Beta_v17
             Activities Activities = db.Activities.FirstOrDefault(p => p.ActivityID == id);
             if (Activities == null) return;
             activities = Activities;
-        }s
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
